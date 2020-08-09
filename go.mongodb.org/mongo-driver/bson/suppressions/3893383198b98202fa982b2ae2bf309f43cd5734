@@ -1,0 +1,6 @@
+panic: runtime error: slice bounds out of range [:-1]
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore.readstring
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore.ReadCodeWithScope
+github.com/johejo/go-fuzz-contrib/go.mongodb.org/mongo-driver/bson.Fuzz
+go-fuzz-dep.Main
+main.main

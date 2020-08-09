@@ -18,6 +18,7 @@ require (
 	github.com/mattn/go-shellwords v1.0.10
 	github.com/mattn/go-zglob v0.0.3
 	github.com/stephens2424/writerset v1.0.2 // indirect
+	go.mongodb.org/mongo-driver v1.4.0
 	golang.org/x/mod v0.3.0
 	golang.org/x/tools v0.0.0-20200809012840-6f4f008689da
 	gopkg.in/ini.v1 v1.57.0

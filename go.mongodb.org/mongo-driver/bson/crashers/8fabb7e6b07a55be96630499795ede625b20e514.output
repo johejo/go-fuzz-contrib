@@ -1,0 +1,14 @@
+panic: runtime error: slice bounds out of range [:-1]
+
+goroutine 1 [running]:
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore.readstring(0x7f25d8be6000, 0xe, 0xe, 0x7f25d8be600a, 0x4, 0x4, 0x7f25d8be600a, 0x0, 0x4)
+	/home/heijo/go/pkg/mod/go.mongodb.org/mongo-driver@v1.4.0/x/bsonx/bsoncore/bsoncore.go:822 +0x27e
+go.mongodb.org/mongo-driver/x/bsonx/bsoncore.ReadDBPointer(0x7f25d8be6000, 0xe, 0xe, 0x654c60, 0x1, 0x0, 0x0, 0x4, 0x7f25d8be600a, 0x4, ...)
+	/home/heijo/go/pkg/mod/go.mongodb.org/mongo-driver@v1.4.0/x/bsonx/bsoncore/bsoncore.go:467 +0x7c
+github.com/johejo/go-fuzz-contrib/go.mongodb.org/mongo-driver/bson.Fuzz(0x7f25d8be6000, 0xe, 0xe, 0x3)
+	/home/heijo/ghq/github.com/johejo/go-fuzz-contrib/go.mongodb.org/mongo-driver/bson/fuzz.go:25 +0x20a
+go-fuzz-dep.Main(0xc000065f70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1ad
+main.main()
+	github.com/johejo/go-fuzz-contrib/go.mongodb.org/mongo-driver/bson/go.fuzz.main/main.go:15 +0x52
+exit status 2
