@@ -1,0 +1,16 @@
+panic: runtime error: makeslice: cap out of range
+
+goroutine 1 [running]:
+archive/zip.(*Reader).init(0xc0000a6040, 0x5b94e0, 0xc000080840, 0x38, 0x56f5a0, 0xc00009ae01)
+	/home/linuxbrew/.linuxbrew/Cellar/go/1.14.6/libexec/src/archive/zip/reader.go:87 +0xb7
+archive/zip.NewReader(0x5b94e0, 0xc000080840, 0x38, 0xc000022600, 0x38, 0x600)
+	/home/linuxbrew/.linuxbrew/Cellar/go/1.14.6/libexec/src/archive/zip/reader.go:75 +0xb8
+github.com/360EntSecGroup-Skylar/excelize.OpenReader(0x5b94c0, 0xc000080810, 0x5f2fee30, 0x51aee73, 0x55bdbf61c0266)
+	/home/heijo/go/pkg/mod/github.com/360!ent!sec!group-!skylar/excelize@v1.4.1/excelize.go:63 +0x164
+github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize.Fuzz(0x7f205df42000, 0x38, 0x38, 0x4)
+	/home/heijo/ghq/github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize/fuzz.go:10 +0xb2
+go-fuzz-dep.Main(0xc00009af70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1ad
+main.main()
+	github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize/go.fuzz.main/main.go:15 +0x52
+exit status 2

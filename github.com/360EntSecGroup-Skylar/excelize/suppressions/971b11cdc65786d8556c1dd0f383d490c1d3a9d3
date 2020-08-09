@@ -1,0 +1,4 @@
+panic: zip: not a valid zip file
+github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize.Fuzz
+go-fuzz-dep.Main
+main.main

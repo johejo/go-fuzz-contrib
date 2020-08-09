@@ -1,0 +1,7 @@
+panic: runtime error: makeslice: cap out of range
+archive/zip.(*Reader).init
+archive/zip.NewReader
+github.com/360EntSecGroup-Skylar/excelize.OpenReader
+github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize.Fuzz
+go-fuzz-dep.Main
+main.main

@@ -1,0 +1,48 @@
+program hanged (timeout 10 seconds)
+
+SIGABRT: abort
+PC=0x45fcd1 m=0 sigcode=0
+
+goroutine 0 [idle]:
+runtime.futex(0x6a2348, 0x80, 0x0, 0x0, 0x7ffc00000000, 0x45f8f5, 0x17063f, 0x37ac2348, 0x7ffc055089f8, 0x40a87f, ...)
+	runtime/sys_linux_amd64.s:567 +0x21
+runtime.futexsleep(0x6a2348, 0x0, 0xffffffffffffffff)
+	runtime/os_linux.go:45 +0x46
+runtime.notesleep(0x6a2348)
+	runtime/lock_futex.go:151 +0x9f
+runtime.stopm()
+	runtime/proc.go:1834 +0xc0
+runtime.findrunnable(0xc000028000, 0x0)
+	runtime/proc.go:2366 +0xa0d
+runtime.schedule()
+	runtime/proc.go:2526 +0x2fc
+runtime.park_m(0xc000000c00)
+	runtime/proc.go:2696 +0x9d
+runtime.mcall(0x0)
+	runtime/asm_amd64.s:318 +0x5b
+
+goroutine 1 [running]:
+	goroutine running on other thread; stack unavailable
+
+rax    0xca
+rbx    0x6a2200
+rcx    0x45fcd3
+rdx    0x0
+rdi    0x6a2348
+rsi    0x80
+rbp    0x7ffc055089c0
+rsp    0x7ffc05508978
+r8     0x0
+r9     0x0
+r10    0x0
+r11    0x286
+r12    0x3
+r13    0x6a1ca0
+r14    0x11
+r15    0x80
+rip    0x45fcd1
+rflags 0x286
+cs     0x33
+fs     0x0
+gs     0x0
+exit status 2

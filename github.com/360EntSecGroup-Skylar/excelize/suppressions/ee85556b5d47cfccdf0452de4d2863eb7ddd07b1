@@ -1,0 +1,12 @@
+fatal error: runtime: out of memory
+runtime.systemstack_switch
+runtime.mallocgc
+runtime.makeslice
+archive/zip.(*Reader).init
+archive/zip.NewReader
+github.com/360EntSecGroup-Skylar/excelize.OpenReader
+github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize.Fuzz
+go-fuzz-dep.Main
+main.main
+runtime.main
+runtime.goexit

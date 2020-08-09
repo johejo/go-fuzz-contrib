@@ -1,0 +1,50 @@
+fatal error: runtime: out of memory
+
+runtime stack:
+runtime.throw(0x59146a, 0x16)
+	runtime/panic.go:1116 +0x72
+runtime.sysMap(0xc004000000, 0x198184000000, 0x6cc5b8)
+	runtime/mem_linux.go:169 +0xc5
+runtime.(*mheap).sysAlloc(0x6b8cc0, 0x198181c00000, 0x6b8cc8, 0xcc0c0c0d)
+	runtime/malloc.go:715 +0x1cd
+runtime.(*mheap).grow(0x6b8cc0, 0xcc0c0c0d, 0x0)
+	runtime/mheap.go:1286 +0x11c
+runtime.(*mheap).allocSpan(0x6b8cc0, 0xcc0c0c0d, 0x7ffe9ba60000, 0x6cc5c8, 0x10)
+	runtime/mheap.go:1124 +0x6a0
+runtime.(*mheap).alloc.func1()
+	runtime/mheap.go:871 +0x64
+runtime.(*mheap).alloc(0x6b8cc0, 0xcc0c0c0d, 0x450100, 0x6b8cc0)
+	runtime/mheap.go:865 +0x81
+runtime.largeAlloc(0x198181818180, 0x680001, 0xc00011ae38)
+	runtime/malloc.go:1152 +0x92
+runtime.mallocgc.func1()
+	runtime/malloc.go:1047 +0x46
+runtime.systemstack(0x45bad4)
+	runtime/asm_amd64.s:370 +0x66
+runtime.mstart()
+	runtime/proc.go:1041
+
+goroutine 1 [running]:
+runtime.systemstack_switch()
+	runtime/asm_amd64.s:330 fp=0xc00011ac40 sp=0xc00011ac38 pc=0x45bbd0
+runtime.mallocgc(0x198181818180, 0x578980, 0x1, 0x0)
+	runtime/malloc.go:1046 +0x895 fp=0xc00011ace0 sp=0xc00011ac40 pc=0x40c395
+runtime.makeslice(0x578980, 0x0, 0x33030303030, 0xc000126080)
+	runtime/slice.go:49 +0x6c fp=0xc00011ad10 sp=0xc00011ace0 pc=0x445b6c
+archive/zip.(*Reader).init(0xc000126040, 0x5b94e0, 0xc000100840, 0x52, 0x56f5a0, 0xc00011ae01)
+	/home/linuxbrew/.linuxbrew/Cellar/go/1.14.6/libexec/src/archive/zip/reader.go:87 +0xb7 fp=0xc00011ad98 sp=0xc00011ad10 pc=0x513fc7
+archive/zip.NewReader(0x5b94e0, 0xc000100840, 0x52, 0xc000022600, 0x52, 0x600)
+	/home/linuxbrew/.linuxbrew/Cellar/go/1.14.6/libexec/src/archive/zip/reader.go:75 +0xb8 fp=0xc00011ade0 sp=0xc00011ad98 pc=0x513e08
+github.com/360EntSecGroup-Skylar/excelize.OpenReader(0x5b94c0, 0xc000100810, 0x5f2fef8b, 0x2c4d9daf, 0x55c2ce81e7fab)
+	/home/heijo/go/pkg/mod/github.com/360!ent!sec!group-!skylar/excelize@v1.4.1/excelize.go:63 +0x164 fp=0xc00011ae70 sp=0xc00011ade0 pc=0x526ae4
+github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize.Fuzz(0x7f67b8ab2000, 0x52, 0x52, 0x4)
+	/home/heijo/ghq/github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize/fuzz.go:10 +0xb2 fp=0xc00011aea8 sp=0xc00011ae70 pc=0x53a102
+go-fuzz-dep.Main(0xc00011af70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1ad fp=0xc00011af58 sp=0xc00011aea8 pc=0x4785ed
+main.main()
+	github.com/johejo/go-fuzz-contrib/github.com/360EntSecGroup-Skylar/excelize/go.fuzz.main/main.go:15 +0x52 fp=0xc00011af88 sp=0xc00011af58 pc=0x53a1e2
+runtime.main()
+	runtime/proc.go:203 +0x1fa fp=0xc00011afe0 sp=0xc00011af88 pc=0x43356a
+runtime.goexit()
+	runtime/asm_amd64.s:1373 +0x1 fp=0xc00011afe8 sp=0xc00011afe0 pc=0x45db61
+exit status 2
