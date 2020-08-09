@@ -1,0 +1,36 @@
+require(
+/ q
+d 0
+d 3
+e(
+b €
+d 0
+d 3
+e(
+b €
+d 1
+e(
+b €
+e(
+b €
+d q
+d 0
+d 3
+e(
+b €
+d 0
+d 3
+e(
+b €
+d 1
+d 0
+d 0
+e(
+b €
+d 1
+e(
+b €
+e(
+b €
+d 3
+)

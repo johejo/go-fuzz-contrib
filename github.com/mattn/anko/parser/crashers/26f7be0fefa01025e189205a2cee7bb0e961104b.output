@@ -1,0 +1,59 @@
+program hanged (timeout 10 seconds)
+
+SIGABRT: abort
+PC=0x45e721 m=0 sigcode=0
+
+goroutine 0 [idle]:
+runtime.futex(0x5efec8, 0x80, 0x0, 0x0, 0x7f5800000000, 0x0, 0xc000118000, 0x7ffc00000001, 0x7ffcaf2e6e68, 0x40a28f, ...)
+	runtime/sys_linux_amd64.s:567 +0x21
+runtime.futexsleep(0x5efec8, 0x7f5800000000, 0xffffffffffffffff)
+	runtime/os_linux.go:45 +0x46
+runtime.notesleep(0x5efec8)
+	runtime/lock_futex.go:151 +0x9f
+runtime.stopm()
+	runtime/proc.go:1834 +0xc0
+runtime.exitsyscall0(0xc000000180)
+	runtime/proc.go:3268 +0x111
+runtime.mcall(0x0)
+	runtime/asm_amd64.s:318 +0x5b
+
+goroutine 1 [runnable]:
+github.com/mattn/anko/parser.yylex1(0x538220, 0xc00037d8b0, 0xc000164500, 0xe031, 0x33)
+	/home/heijo/go/pkg/mod/github.com/mattn/anko@v0.1.8/parser/parser.go:1042 +0x466
+github.com/mattn/anko/parser.(*yyParserImpl).Parse(0xc000164500, 0x538220, 0xc00037d8b0, 0x0)
+	/home/heijo/go/pkg/mod/github.com/mattn/anko@v0.1.8/parser/parser.go:1129 +0x161db
+github.com/mattn/anko/parser.yyParse(...)
+	/home/heijo/go/pkg/mod/github.com/mattn/anko@v0.1.8/parser/parser.go:1078
+github.com/mattn/anko/parser.Parse(0xc000101650, 0xc000101650, 0x3, 0xc0003b38c8, 0x1)
+	/home/heijo/go/pkg/mod/github.com/mattn/anko@v0.1.8/parser/lexer.go:591 +0xef
+github.com/mattn/anko/parser.ParseSrc(0xc000420e78, 0x3, 0x3, 0x3, 0xc000420e78, 0x3)
+	/home/heijo/go/pkg/mod/github.com/mattn/anko@v0.1.8/parser/lexer.go:612 +0xb9
+github.com/johejo/go-fuzz-contrib/github.com/mattn/anko/parser.Fuzz(0x7f583a827000, 0x3, 0x3, 0x3)
+	/home/heijo/ghq/github.com/johejo/go-fuzz-contrib/github.com/mattn/anko/parser/fuzz.go:6 +0x7d
+go-fuzz-dep.Main(0xc000420f70, 0x1, 0x1)
+	go-fuzz-dep/main.go:36 +0x1ad
+main.main()
+	github.com/johejo/go-fuzz-contrib/github.com/mattn/anko/parser/go.fuzz.main/main.go:15 +0x52
+
+rax    0xca
+rbx    0x5efd80
+rcx    0x45e723
+rdx    0x0
+rdi    0x5efec8
+rsi    0x80
+rbp    0x7ffcaf2e6e30
+rsp    0x7ffcaf2e6de8
+r8     0x0
+r9     0x0
+r10    0x0
+r11    0x286
+r12    0x5debc0
+r13    0x5ddda0
+r14    0x5d85c0
+r15    0x4
+rip    0x45e721
+rflags 0x286
+cs     0x33
+fs     0x0
+gs     0x0
+exit status 2

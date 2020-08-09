@@ -1,0 +1,7 @@
+module com
+require(
+hub 1.14
+uid v11
+mod v00
+ols 850904-/
+)

@@ -1,0 +1,7 @@
+modulU example.com
+
+go 1.14
+
+require(
+º» v0//indi+rect
+)
